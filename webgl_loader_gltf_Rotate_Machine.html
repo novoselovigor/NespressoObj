@@ -12,7 +12,7 @@
 
 		<script type="module">
 
-			import * as THREE from '../build/three.module.js';
+			import * as THREE from '/build/three.module.js';
 
 			import { OrbitControls } from './jsm/controls/OrbitControls.js';
 			import { GLTFLoader } from './jsm/loaders/GLTFLoader.js';
@@ -37,7 +37,7 @@
 
 				new RGBELoader()
 					.setDataType( THREE.UnsignedByteType )
-					.setPath( 'textures/equirectangular/' )
+					.setPath( 'textures/' )
 					.load( '062.hdr', function ( texture ) {
 
 						var envMap = pmremGenerator.fromEquirectangular( texture ).texture;
@@ -55,7 +55,7 @@
 						// use of RoughnessMipmapper is optional
 					var roughnessMipmapper = new RoughnessMipmapper( renderer );
 
-						var loader = new GLTFLoader().setPath( 'models/gltf/DamagedHelmet/glTF/' );
+						var loader = new GLTFLoader().setPath( 'models/' );
 						loader.load( 'vert.glb', function ( gltf ) {
 
 							gltf.scene.traverse( function ( child ) {
